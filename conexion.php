@@ -1,23 +1,13 @@
 <?php 
 
-$scope = "local";
-/*
-if (strpos(base_url(),'localhost')!==FALSE) {
-	$scope = "local";
-} else {
-	$scope = "produccion";
-}
-*/
-if ($scope=="local") {
+if (strpos($_SERVER["SERVER_NAME"],'localhost')!==FALSE) {
 	// local
 	$servidor = "localhost";
 	$cuenta = "root";
 	$password = "myapm";
 	$database = "psicoexpresate";
-}
-
-if ($scope=="produccion") {
-	// Produccion
+} else {
+	// pruebas
 	$servidor = "localhost:3306";
 	$cuenta = "sgcco_psico";
 	$password = "psicoexpresate12345**";
